@@ -35,6 +35,7 @@ export function ProjectScreenshot({ src, alt, index, className }: { src?: string
 
 export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
   const [workflow, output] = project.coverSupportingImages;
+  const [workflowLabel, outputLabel] = project.coverSupportingLabels;
   return (
     <div className={`relative min-h-[34rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
       <div className="absolute -right-10 -top-12 size-52 rounded-full bg-white/70 blur-3xl" />
@@ -44,12 +45,12 @@ export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={workflow} alt={`${project.title} workflow screen`} index={1} className="scale-[1.35]" />
-            <span className="absolute bottom-2 left-2 rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">Workflow</span>
+            <ProjectScreenshot src={workflow} alt={`${project.title} workflow screen`} index={1} />
+            <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">{workflowLabel}</span>
           </div>
           <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={output} alt={`${project.title} output screen`} index={2} className="scale-[1.35]" />
-            <span className="absolute bottom-2 left-2 rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">Output</span>
+            <ProjectScreenshot src={output} alt={`${project.title} output screen`} index={2} />
+            <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">{outputLabel}</span>
           </div>
         </div>
       </div>

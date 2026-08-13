@@ -62,6 +62,7 @@ export type Project = {
   tags: string[];
   coverImage: string;
   coverSupportingImages: [string, string];
+  coverSupportingLabels: [string, string];
   screenshots: string[];
   accent: "blue" | "violet" | "emerald" | "amber" | "rose" | "cyan";
   productStory: ProductStory;
@@ -251,6 +252,7 @@ export const portfolio = {
       tags: ["Python", "Streamlit", "AI/LLM", "Decision Support"],
       coverImage: "/images/ai-projects/decision-making/cover.svg",
       coverSupportingImages: ["/images/ai-projects/decision-making/workflow.svg", "/images/ai-projects/decision-making/output.svg"],
+      coverSupportingLabels: ["Structure the decision", "Options & next steps"],
       screenshots: [
         "/images/ai-projects/decision-making/01-main.png",
         "/images/ai-projects/decision-making/02-workflow.png",
@@ -281,6 +283,7 @@ export const portfolio = {
       tags: ["Python", "FastAPI", "Streamlit", "Docker", "AI/LLM"],
       coverImage: "/images/ai-projects/energy-optimizer/cover.svg",
       coverSupportingImages: ["/images/ai-projects/energy-optimizer/workflow.svg", "/images/ai-projects/energy-optimizer/output.svg"],
+      coverSupportingLabels: ["Forecast & meter inputs", "Top solar windows"],
       screenshots: [
         "/images/ai-projects/energy-optimizer/01-main.png",
         "/images/ai-projects/energy-optimizer/02-patterns.png",
@@ -312,6 +315,7 @@ export const portfolio = {
       tags: ["Python", "Streamlit", "AI/LLM", "Validation", "PDF"],
       coverImage: "/images/ai-projects/cv-optimizer/cover.svg",
       coverSupportingImages: ["/images/ai-projects/cv-optimizer/workflow.svg", "/images/ai-projects/cv-optimizer/output.svg"],
+      coverSupportingLabels: ["CV fit assessment", "Interview & PDF output"],
       screenshots: [
         "/images/ai-projects/cv-optimizer/01-main.png",
         "/images/ai-projects/cv-optimizer/02-validation.png",
@@ -343,6 +347,7 @@ export const portfolio = {
       tags: ["FastAPI", "Python", "AI/LLM", "PDF", "Validation"],
       coverImage: "/images/ai-projects/commercial-cv/cover.svg",
       coverSupportingImages: ["/images/ai-projects/commercial-cv/workflow.svg", "/images/ai-projects/commercial-cv/output.svg"],
+      coverSupportingLabels: ["Validate CV & role brief", "Grounded PDF delivery"],
       screenshots: [
         "/images/ai-projects/commercial-cv/01-main.png",
         "/images/ai-projects/commercial-cv/02-validation.png",
@@ -373,6 +378,7 @@ export const portfolio = {
       tags: ["Next.js", "FastAPI", "Python", "PDF Report", "AI/LLM"],
       coverImage: "/images/ai-projects/dental-trip-savings/cover.svg",
       coverSupportingImages: ["/images/ai-projects/dental-trip-savings/workflow.svg", "/images/ai-projects/dental-trip-savings/output.svg"],
+      coverSupportingLabels: ["Trip estimate inputs", "Comparison report"],
       screenshots: [
         "/images/ai-projects/dental-trip-savings/01-main.png",
         "/images/ai-projects/dental-trip-savings/02-comparison.png",
@@ -403,6 +409,7 @@ export const portfolio = {
       tags: ["Python", "Google APIs", "SERP Research", "AI/LLM", "Automation"],
       coverImage: "/images/ai-projects/seo-automation/cover.svg",
       coverSupportingImages: ["/images/ai-projects/seo-automation/workflow.svg", "/images/ai-projects/seo-automation/output.svg"],
+      coverSupportingLabels: ["Keyword & SERP evidence", "Topic strategy output"],
       screenshots: [
         "/images/ai-projects/seo-automation/01-main.png",
         "/images/ai-projects/seo-automation/02-research.png",
