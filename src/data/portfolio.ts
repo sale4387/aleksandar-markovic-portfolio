@@ -38,7 +38,7 @@ export type ProductStoryStep = {
 };
 
 export type ProductStory = {
-  animationType: "decision" | "energy" | "cv" | "comparison" | "seo";
+  animationType: "decision" | "energy" | "cv" | "commercial-cv" | "comparison" | "seo";
   steps: ProductStoryStep[];
 };
 
@@ -230,7 +230,7 @@ export const portfolio = {
           { label: "Optimize windows", loadingText: "Scoring productive solar windows...", loadingDetail: "Deterministic logic ranks the top three windows; AI does not control devices." },
           { label: "Top 3 windows", output: "Best times to use flexible appliances: late morning, midday and early afternoon." },
           { label: "AI explanation", output: "Use the strongest window for flexible appliances, then check the forecast before starting." },
-          { label: "Daily notification", output: "Gmail preview: tomorrow’s three best solar windows are ready.", finalNote: "Synthetic portfolio walkthrough" },
+          { label: "Daily notification", output: "Tomorrow’s three best solar windows are ready.", meta: ["Gmail · notification ready", "Telegram-style · future / optional"], finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
@@ -251,7 +251,7 @@ export const portfolio = {
       ],
       accent: "blue",
       productStory: {
-        animationType: "cv",
+        animationType: "commercial-cv",
         steps: [
           { label: "Candidate CV", input: "Sample profile selected: partnerships and operations." },
           { label: "Job description", input: "Role brief pasted: strategic partnerships manager." },
@@ -314,7 +314,7 @@ export const portfolio = {
           { label: "Fixed treatment", input: "Treatment: Single dental implant." },
           { label: "Destination options", meta: ["Mexico City", "Budapest", "Belgrade"] },
           { label: "Estimate totals", loadingText: "Combining clinic, cached flight and accommodation estimates...", loadingDetail: "Source-backed estimates are combined; no live booking or medical advice." },
-          { label: "Compare options", output: "See the cheapest estimated trip, easiest trip and best overall option." },
+          { label: "Compare options", meta: ["Cheapest estimated trip", "Easiest trip", "Best overall"], output: "See the cheapest estimated trip, easiest trip and best overall option." },
           { label: "Savings report", output: "PDF-style report: estimated total cost from and potential savings from.", finalNote: "Informational synthetic walkthrough — not medical advice" },
         ],
       },
@@ -341,9 +341,9 @@ export const portfolio = {
           { label: "Project dataset", input: "Sample project dataset selected: approved public product facts." },
           { label: "Keyword evidence", meta: ["Seed topics prepared", "Keyword Planner CSV imported", "Metrics remain evidence only"] },
           { label: "SERP research", loadingText: "Collecting bounded SERP evidence...", loadingDetail: "Source references and search patterns are gathered before strategy work." },
-          { label: "AI topic strategy", output: "Source-backed topic opportunities are ranked from the available evidence." },
+          { label: "AI topic strategy", meta: ["Evidence reviewed", "Opportunities ranked", "Human review next"], output: "Source-backed topic opportunities are ranked from the available evidence." },
           { label: "Human selection", meta: ["Owner selects one topic", "Brief uses approved evidence", "No automatic publishing"] },
-          { label: "Brief & article workflow", output: "Selected topic becomes an SEO brief and reviewable draft; the workflow stops before publishing.", finalNote: "Synthetic portfolio walkthrough" },
+          { label: "Brief & article workflow", meta: ["Selected topic", "SEO brief", "Reviewable draft"], output: "Selected topic becomes an SEO brief and reviewable draft; the workflow stops before publishing.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
