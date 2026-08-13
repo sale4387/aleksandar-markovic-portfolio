@@ -31,8 +31,10 @@ export type ProductStoryStep = {
   label: string;
   input?: string;
   loadingText?: string;
+  loadingDetail?: string;
   output?: string;
   meta?: string[];
+  finalNote?: string;
 };
 
 export type ProductStory = {
@@ -194,11 +196,12 @@ export const portfolio = {
       productStory: {
         animationType: "decision",
         steps: [
-          { label: "Decision input", input: "Should I eat pizza or burger?" },
-          { label: "Criteria", meta: ["Time", "Cost", "Health", "Mood"] },
-          { label: "Analysis", loadingText: "Analyzing trade-offs..." },
-          { label: "Recommendation", output: "Burger wins for speed. Pizza wins for sharing." },
-          { label: "Decision summary", output: "Recommendation depends on whether convenience or social value matters more." },
+          { label: "Raw decision", input: "Should I keep my current phone or buy a new one?" },
+          { label: "Structure the decision", loadingText: "Extracting the decision details...", loadingDetail: "Turning the question into a clear goal, constraints and options." },
+          { label: "Goal & constraints", meta: ["Goal: choose a reliable phone", "Budget-aware", "Avoid a long setup"] },
+          { label: "Options", meta: ["Keep current phone", "Buy a new phone"] },
+          { label: "Pros & cons", output: "Keep: lower immediate cost. Buy: fresh battery and warranty." },
+          { label: "Next steps & signal", output: "Check battery health and replacement prices. Category: constrained; quality: ready to review.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
@@ -221,9 +224,13 @@ export const portfolio = {
       productStory: {
         animationType: "energy",
         steps: [
-          { label: "Story setup", input: "Walkthrough content to be added." },
-          { label: "Preview preparation", loadingText: "Preparing product story..." },
-          { label: "Story status", output: "A guided workflow will be added here." },
+          { label: "Weather forecast", input: "Tomorrow: a clear, high-solar midday forecast." },
+          { label: "P1 meter reading", meta: ["Grid status: exporting", "Household load: low", "Live reading received"] },
+          { label: "Inverter reading", meta: ["Solar production: rising", "Inverter status: available", "Forecast and readings aligned"] },
+          { label: "Optimize windows", loadingText: "Scoring productive solar windows...", loadingDetail: "Deterministic logic ranks the top three windows; AI does not control devices." },
+          { label: "Top 3 windows", output: "Best times to use flexible appliances: late morning, midday and early afternoon." },
+          { label: "AI explanation", output: "Use the strongest window for flexible appliances, then check the forecast before starting." },
+          { label: "Daily notification", output: "Gmail preview: tomorrow’s three best solar windows are ready.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
@@ -246,9 +253,13 @@ export const portfolio = {
       productStory: {
         animationType: "cv",
         steps: [
-          { label: "Story setup", input: "Walkthrough content to be added." },
-          { label: "Preview preparation", loadingText: "Preparing product story..." },
-          { label: "Story status", output: "A guided workflow will be added here." },
+          { label: "Candidate CV", input: "Sample profile selected: partnerships and operations." },
+          { label: "Job description", input: "Role brief pasted: strategic partnerships manager." },
+          { label: "Fit assessment", loadingText: "Checking the role against documented experience...", loadingDetail: "Sample result: solid fit, with one preference to discuss honestly." },
+          { label: "CV tailoring", output: "Summary and priorities are refined while every claim stays grounded in the CV." },
+          { label: "Company research", output: "Supporting research surfaces market context, recent signals and questions to verify." },
+          { label: "Interview prep", meta: ["Likely interviewer questions", "Candidate questions to ask", "Evidence-led talking points"] },
+          { label: "PDF output", output: "Accepted CV is prepared as a reviewable PDF.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
@@ -271,9 +282,12 @@ export const portfolio = {
       productStory: {
         animationType: "cv",
         steps: [
-          { label: "Story setup", input: "Walkthrough content to be added." },
-          { label: "Preview preparation", loadingText: "Preparing product story..." },
-          { label: "Story status", output: "A guided workflow will be added here." },
+          { label: "Secure CV intake", input: "Sample PDF or DOCX CV uploaded for validation." },
+          { label: "Job description check", input: "Pasted role brief passes format and safety checks." },
+          { label: "Stage 1: structure", loadingText: "Structuring validated CV facts...", loadingDetail: "The workflow uses temporary, request-scoped source data." },
+          { label: "Stage 2: tailor", loadingText: "Tailoring the CV against the role brief...", loadingDetail: "Wording may change, but source facts remain the evidence base." },
+          { label: "Grounding check", output: "Output validation passed: claims match the supplied CV evidence." },
+          { label: "Temporary PDF", output: "A protected, temporary PDF download is prepared.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
@@ -296,9 +310,12 @@ export const portfolio = {
       productStory: {
         animationType: "comparison",
         steps: [
-          { label: "Story setup", input: "Walkthrough content to be added." },
-          { label: "Preview preparation", loadingText: "Preparing product story..." },
-          { label: "Story status", output: "A guided workflow will be added here." },
+          { label: "Departure airport", input: "US departure airport selected: New York (JFK)." },
+          { label: "Fixed treatment", input: "Treatment: Single dental implant." },
+          { label: "Destination options", meta: ["Mexico City", "Budapest", "Belgrade"] },
+          { label: "Estimate totals", loadingText: "Combining clinic, cached flight and accommodation estimates...", loadingDetail: "Source-backed estimates are combined; no live booking or medical advice." },
+          { label: "Compare options", output: "See the cheapest estimated trip, easiest trip and best overall option." },
+          { label: "Savings report", output: "PDF-style report: estimated total cost from and potential savings from.", finalNote: "Informational synthetic walkthrough — not medical advice" },
         ],
       },
     },
@@ -321,9 +338,12 @@ export const portfolio = {
       productStory: {
         animationType: "seo",
         steps: [
-          { label: "Story setup", input: "Walkthrough content to be added." },
-          { label: "Preview preparation", loadingText: "Preparing product story..." },
-          { label: "Story status", output: "A guided workflow will be added here." },
+          { label: "Project dataset", input: "Sample project dataset selected: approved public product facts." },
+          { label: "Keyword evidence", meta: ["Seed topics prepared", "Keyword Planner CSV imported", "Metrics remain evidence only"] },
+          { label: "SERP research", loadingText: "Collecting bounded SERP evidence...", loadingDetail: "Source references and search patterns are gathered before strategy work." },
+          { label: "AI topic strategy", output: "Source-backed topic opportunities are ranked from the available evidence." },
+          { label: "Human selection", meta: ["Owner selects one topic", "Brief uses approved evidence", "No automatic publishing"] },
+          { label: "Brief & article workflow", output: "Selected topic becomes an SEO brief and reviewable draft; the workflow stops before publishing.", finalNote: "Synthetic portfolio walkthrough" },
         ],
       },
     },
