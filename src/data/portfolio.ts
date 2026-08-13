@@ -21,10 +21,18 @@ export type Education = {
 };
 
 export type Event = {
+  id: string;
   title: string;
   year: string;
-  focus: "Community & education" | "Execution & organisation";
-  description: string;
+  location: string;
+  role: string;
+  category: string;
+  shortDescription: string;
+  context: string;
+  contribution: string[];
+  outcome: string;
+  demonstrates: string[];
+  images: string[];
 };
 
 export type ProductStoryStep = {
@@ -162,10 +170,62 @@ export const portfolio = {
     { title: "Practical teaching", detail: "Lectures & workshops", description: "MS Project, project planning, business communication case studies, and hands-on work with students." },
   ] satisfies Education[],
   events: [
-    { title: "International Youth Day", year: "2010", focus: "Community & education", description: "A community-facing initiative centred on young people, participation, and shared learning." },
-    { title: "Language Courses for Students", year: "2011", focus: "Community & education", description: "Student-focused learning activities designed to make language practice more accessible and engaging." },
-    { title: "The Belgrade Get Together", year: "2015", focus: "Execution & organisation", description: "Organising people, programme details, and on-the-day coordination to create a cohesive shared experience." },
-    { title: "Liftit", year: "2016", focus: "Execution & organisation", description: "A delivery-led event project requiring practical planning, coordination, and attention to the participant experience." },
+    {
+      id: "international-youth-day-2010",
+      title: "International Youth Day",
+      year: "2010",
+      location: "Belgrade",
+      role: "Contributor / youth event support",
+      category: "Youth / Community",
+      shortDescription: "Contributed to youth-focused activities in Belgrade during the International Year of Youth.",
+      context: "International Youth Day 2010 took place during the United Nations International Year of Youth, with a broader focus on dialogue, participation and social inclusion.",
+      contribution: ["Supported youth-focused public activities in Belgrade", "Contributed as part of the wider organizing effort", "Helped with practical event/community execution"],
+      outcome: "A community-oriented youth event experience connected to public participation, coordination and youth engagement.",
+      demonstrates: ["Community involvement", "Event support", "Youth-focused programming", "Practical coordination"],
+      images: [],
+    },
+    {
+      id: "language-courses-2011",
+      title: "Language Courses for Young People",
+      year: "2011",
+      location: "Belgrade",
+      role: "Organizer / project support",
+      category: "Education / Youth",
+      shortDescription: "Helped organize language courses for young people in cooperation with Equilibrio language school.",
+      context: "A youth education initiative focused on practical language learning and access to structured courses.",
+      contribution: ["Helped coordinate the course initiative", "Supported cooperation with Equilibrio language school", "Contributed to practical organization and student-facing delivery"],
+      outcome: "An education-focused project experience combining youth work, coordination and practical learning.",
+      demonstrates: ["Education project coordination", "Partner cooperation", "Youth learning support", "Practical organization"],
+      images: [],
+    },
+    {
+      id: "belgrade-get-together-2015",
+      title: "The Belgrade Get Together",
+      year: "2015",
+      location: "Belgrade",
+      role: "Lead organizer",
+      category: "Event Management",
+      shortDescription: "Led the organization and delivery of a networking-style event in Belgrade.",
+      context: "A self-led event project focused on bringing people together through planning, logistics, communication and execution.",
+      contribution: ["Led planning and coordination", "Handled practical logistics", "Coordinated people and event flow", "Owned execution from preparation to delivery"],
+      outcome: "A hands-on event leadership experience showing end-to-end ownership and delivery.",
+      demonstrates: ["Event ownership", "Logistics", "Stakeholder coordination", "Execution under pressure"],
+      images: [],
+    },
+    {
+      id: "liftit-2016",
+      title: "Liftit",
+      year: "2016",
+      location: "Belgrade",
+      role: "Lead organizer",
+      category: "Event Management",
+      shortDescription: "Led the organization and practical delivery of Liftit 2016.",
+      context: "A self-led event project requiring planning, coordination, logistics and execution.",
+      contribution: ["Owned event preparation", "Managed logistics and coordination", "Handled practical execution details", "Drove the event from concept to delivery"],
+      outcome: "A lead-organizer experience demonstrating planning, responsibility and hands-on delivery.",
+      demonstrates: ["Leadership", "Planning", "Execution", "Event operations"],
+      images: [],
+    },
   ] satisfies Event[],
   languages: [
     { name: "Serbian", level: "Native" },
