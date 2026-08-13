@@ -61,6 +61,7 @@ export type Project = {
   outcome: string;
   tags: string[];
   coverImage: string;
+  coverSupportingImages: [string, string];
   screenshots: string[];
   accent: "blue" | "violet" | "emerald" | "amber" | "rose" | "cyan";
   productStory: ProductStory;
@@ -249,6 +250,7 @@ export const portfolio = {
       outcome: "Demonstrates practical use of AI and structured workflows for clearer decision-making.",
       tags: ["Python", "Streamlit", "AI/LLM", "Decision Support"],
       coverImage: "/images/ai-projects/decision-making/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/decision-making/workflow.svg", "/images/ai-projects/decision-making/output.svg"],
       screenshots: [
         "/images/ai-projects/decision-making/01-main.png",
         "/images/ai-projects/decision-making/02-workflow.png",
@@ -278,6 +280,7 @@ export const portfolio = {
       outcome: "Demonstrates how data, automation and AI-assisted analysis can turn household energy usage into actionable advice.",
       tags: ["Python", "FastAPI", "Streamlit", "Docker", "AI/LLM"],
       coverImage: "/images/ai-projects/energy-optimizer/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/energy-optimizer/workflow.svg", "/images/ai-projects/energy-optimizer/output.svg"],
       screenshots: [
         "/images/ai-projects/energy-optimizer/01-main.png",
         "/images/ai-projects/energy-optimizer/02-patterns.png",
@@ -308,6 +311,7 @@ export const portfolio = {
       outcome: "Demonstrates validation-first AI workflow design and controlled use of AI for career tooling.",
       tags: ["Python", "Streamlit", "AI/LLM", "Validation", "PDF"],
       coverImage: "/images/ai-projects/cv-optimizer/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/cv-optimizer/workflow.svg", "/images/ai-projects/cv-optimizer/output.svg"],
       screenshots: [
         "/images/ai-projects/cv-optimizer/01-main.png",
         "/images/ai-projects/cv-optimizer/02-validation.png",
@@ -329,15 +333,16 @@ export const portfolio = {
     },
     {
       id: "commercial-cv",
-      title: "Commercial CV Optimizer",
+      title: "CV Optimizer — GTM Prototype",
       status: "Local demo",
       role: "Product owner / system designer / Codex-led implementation",
-      shortDescription: "A commercialized version of the CV optimization workflow with secure intake, validation and structured delivery.",
-      problem: "Turning a personal AI tool into a reusable commercial workflow requires stricter validation, safer intake and clearer output structure.",
+      shortDescription: "A go-to-market prototype for a validation-led CV tailoring workflow with structured temporary delivery.",
+      problem: "Testing a reusable CV workflow requires stricter validation, safer intake and clearer delivery than a personal prototype.",
       workflow: ["Validate uploaded CV", "Validate job description", "Run structured AI extraction", "Generate tailored CV", "Validate output and prepare delivery"],
       outcome: "Demonstrates productization of an AI workflow, including security, validation and delivery thinking.",
       tags: ["FastAPI", "Python", "AI/LLM", "PDF", "Validation"],
       coverImage: "/images/ai-projects/commercial-cv/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/commercial-cv/workflow.svg", "/images/ai-projects/commercial-cv/output.svg"],
       screenshots: [
         "/images/ai-projects/commercial-cv/01-main.png",
         "/images/ai-projects/commercial-cv/02-validation.png",
@@ -367,6 +372,7 @@ export const portfolio = {
       outcome: "Demonstrates product thinking around comparison workflows, public-facing reports and decision support.",
       tags: ["Next.js", "FastAPI", "Python", "PDF Report", "AI/LLM"],
       coverImage: "/images/ai-projects/dental-trip-savings/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/dental-trip-savings/workflow.svg", "/images/ai-projects/dental-trip-savings/output.svg"],
       screenshots: [
         "/images/ai-projects/dental-trip-savings/01-main.png",
         "/images/ai-projects/dental-trip-savings/02-comparison.png",
@@ -396,6 +402,7 @@ export const portfolio = {
       outcome: "Demonstrates reusable workflow design for content research, SEO planning and AI-assisted brief generation.",
       tags: ["Python", "Google APIs", "SERP Research", "AI/LLM", "Automation"],
       coverImage: "/images/ai-projects/seo-automation/cover.svg",
+      coverSupportingImages: ["/images/ai-projects/seo-automation/workflow.svg", "/images/ai-projects/seo-automation/output.svg"],
       screenshots: [
         "/images/ai-projects/seo-automation/01-main.png",
         "/images/ai-projects/seo-automation/02-research.png",

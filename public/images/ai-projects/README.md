@@ -1,6 +1,6 @@
 # AI project covers
 
-Each project card uses its matching editable `cover.svg` as a 16:10 product-cover mockup. Open an SVG in a code editor, Figma, Illustrator, or Inkscape to revise its labels, colors, or UI layout. To replace a cover with a PNG, update the matching `coverImage` path in `src/data/portfolio.ts`.
+Each project card uses a matching editable three-image set: `cover.svg` is the 16:10 hero mockup, while `workflow.svg` and `output.svg` are the overlapping supporting views. Open an SVG in a code editor, Figma, Illustrator, or Inkscape to revise its labels, colors, or UI layout. To replace an image with a PNG, update its path in `src/data/portfolio.ts`.
 
 # Supporting product-story screenshots
 
