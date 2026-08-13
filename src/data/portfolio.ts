@@ -171,8 +171,8 @@ export const portfolio = {
     },
   ] satisfies Experience[],
   education: [
-    { title: "Bachelor — Management", detail: "Academic foundation", description: "Grounding in management principles, organisational thinking, and business practice." },
-    { title: "Master — Project Risk Management", detail: "Academic specialisation", description: "Focused study of risk-aware planning, project decisions, and complex delivery environments." },
+    { title: "Bachelor: Management", detail: "Academic foundation", description: "Grounding in management principles, organisational thinking, and business practice." },
+    { title: "Master: Project Risk Management", detail: "Academic specialisation", description: "Focused study of risk-aware planning, project decisions, and complex delivery environments." },
     { title: "Practical teaching", detail: "Lectures & workshops", description: "MS Project, project planning, business communication case studies, and hands-on work with students." },
   ] satisfies Education[],
   events: [
@@ -347,7 +347,7 @@ export const portfolio = {
     },
     {
       id: "commercial-cv",
-      title: "CV Optimizer — GTM Prototype",
+      title: "CV Optimizer: GTM Prototype",
       status: "Local demo",
       role: "Product owner / system designer / Codex-led implementation",
       shortDescription: "A go-to-market prototype for a validation-led CV tailoring workflow with structured temporary delivery.",
@@ -405,7 +405,7 @@ export const portfolio = {
           { label: "Destination options", meta: ["Mexico City", "Budapest", "Belgrade"] },
           { label: "Estimate totals", loadingText: "Combining clinic, cached flight and accommodation estimates...", loadingDetail: "Source-backed estimates are combined; no live booking or medical advice." },
           { label: "Compare options", meta: ["Cheapest estimated trip", "Easiest trip", "Best overall"], output: "See the cheapest estimated trip, easiest trip and best overall option." },
-          { label: "Savings report", output: "PDF-style report: estimated total cost from and potential savings from.", finalNote: "Informational synthetic walkthrough — not medical advice" },
+          { label: "Savings report", output: "PDF-style report: estimated total cost from and potential savings from.", finalNote: "Informational synthetic walkthrough; not medical advice" },
         ],
       },
     },
@@ -458,7 +458,7 @@ export const portfolio = {
     {
       title: "DIY & Woodworking",
       label: "Making by hand",
-      description: "A practical counterbalance to screen work — planning, building, and refining tangible things.",
+      description: "A practical counterbalance to screen work: planning, building, and refining tangible things.",
       images: [
         "/images/hobbies/woodworking/woodworking-01-workspace.jpeg",
         "/images/hobbies/woodworking/woodworking-02-platform.jpeg",

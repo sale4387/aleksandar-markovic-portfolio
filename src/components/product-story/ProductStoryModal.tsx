@@ -70,7 +70,7 @@ export default function ProductStoryModal({ project, onClose }: ProductStoryModa
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#243b6b]">What it demonstrates</p>
               <p className="mt-3 text-sm leading-7 text-slate-600">{project.outcome}</p>
               <div className="mt-6 border-t border-slate-100 pt-6"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Tech</p><div className="mt-3 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} variant="outline">{tag}</Badge>)}</div></div>
-              <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-600"><Check className="size-4 text-[#243b6b]" aria-hidden="true" />Guided product story — no public demo link</div>
+              <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-600"><Check className="size-4 text-[#243b6b]" aria-hidden="true" />Guided product story; no public demo link</div>
             </aside>
           </div>
         </div>

@@ -10,7 +10,7 @@ const accentStyles = ["bg-slate-200 text-[#243b6b]", "bg-[#e8ebf4] text-[#343b66
 export function CoreSkills() {
   return (
     <Section id="skills" className="bg-[#f8fafc]">
-      <SectionHeading eyebrow="Capabilities" title="Core Skills" description="A capability-led view of the work I do — grounded in transferable skills, not industries." />
+      <SectionHeading eyebrow="Capabilities" title="Core Skills" description="A capability-led view of the work I do, grounded in transferable skills rather than industries." />
       <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
         {portfolio.skills.map((skill, index) => {
           const Icon = skillIcons[index];
