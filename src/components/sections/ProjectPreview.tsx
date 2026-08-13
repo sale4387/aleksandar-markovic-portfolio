@@ -34,20 +34,11 @@ export function ProjectScreenshot({ src, alt, index, className }: { src?: string
 }
 
 export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
-  const [featured, ...supporting] = project.screenshots;
   return (
     <div className={`relative min-h-[22rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
       <div className="absolute -right-10 -top-12 size-52 rounded-full bg-white/70 blur-3xl" />
-      <div className="relative h-full min-h-[18rem]">
-        <div className="absolute inset-x-0 bottom-0 top-0 overflow-hidden rounded-2xl border border-slate-300 bg-white p-2.5 shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
-          <ProjectScreenshot src={featured} alt={`${project.title} main screen`} index={0} />
-        </div>
-        <div className="absolute -bottom-3 -right-2 hidden w-[43%] rotate-3 overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_14px_26px_rgba(15,23,42,0.15)] sm:block">
-          <div className="aspect-[4/3]"><ProjectScreenshot src={supporting[0]} alt={`${project.title} supporting screen`} index={1} /></div>
-        </div>
-        <div className="absolute -bottom-6 left-2 hidden w-[34%] -rotate-3 overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_14px_26px_rgba(15,23,42,0.15)] md:block">
-          <div className="aspect-[4/3]"><ProjectScreenshot src={supporting[1]} alt={`${project.title} detail screen`} index={2} /></div>
-        </div>
+      <div className="relative min-h-[18rem] overflow-hidden rounded-2xl border border-slate-300 bg-white shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
+        <ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} />
       </div>
     </div>
   );

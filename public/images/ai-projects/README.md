@@ -1,4 +1,8 @@
-# AI project screenshots
+# AI project covers
+
+Each project card uses its matching editable `cover.svg` as a 16:10 product-cover mockup. Open an SVG in a code editor, Figma, Illustrator, or Inkscape to revise its labels, colors, or UI layout. To replace a cover with a PNG, update the matching `coverImage` path in `src/data/portfolio.ts`.
+
+# Supporting product-story screenshots
 
 Add up to three screenshots per project in the folders below. The portfolio already points to the preferred filenames; missing images automatically show a polished product-preview frame instead of a broken image.
 
