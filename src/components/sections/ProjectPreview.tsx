@@ -36,18 +36,20 @@ export function ProjectScreenshot({ src, alt, index, className }: { src?: string
 export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
   const [workflow, output] = project.coverSupportingImages;
   return (
-    <div className={`relative min-h-[25rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
+    <div className={`relative min-h-[34rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
       <div className="absolute -right-10 -top-12 size-52 rounded-full bg-white/70 blur-3xl" />
-      <div className="relative grid min-h-[20rem] grid-rows-[minmax(0,1fr)_6.5rem] gap-3 sm:grid-rows-[minmax(0,1fr)_7.5rem] sm:gap-4">
+      <div className="relative grid min-h-[29rem] grid-rows-[minmax(0,1fr)_11rem] gap-4 sm:grid-rows-[minmax(0,1fr)_12rem] sm:gap-5">
         <div className="overflow-hidden rounded-2xl border border-slate-300 bg-white p-2 shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
           <ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} />
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          <div className="overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={workflow} alt={`${project.title} workflow screen`} index={1} />
+          <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
+            <ProjectScreenshot src={workflow} alt={`${project.title} workflow screen`} index={1} className="scale-[1.35]" />
+            <span className="absolute bottom-2 left-2 rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">Workflow</span>
           </div>
-          <div className="overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={output} alt={`${project.title} output screen`} index={2} />
+          <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
+            <ProjectScreenshot src={output} alt={`${project.title} output screen`} index={2} className="scale-[1.35]" />
+            <span className="absolute bottom-2 left-2 rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">Output</span>
           </div>
         </div>
       </div>
