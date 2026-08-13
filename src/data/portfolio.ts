@@ -63,6 +63,7 @@ export type Project = {
   coverImage: string;
   coverSupportingImages: [string, string];
   coverSupportingLabels: [string, string];
+  coverSupportingDetails: [string, string];
   screenshots: string[];
   accent: "blue" | "violet" | "emerald" | "amber" | "rose" | "cyan";
   productStory: ProductStory;
@@ -253,6 +254,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/decision-making/cover.svg",
       coverSupportingImages: ["/images/ai-projects/decision-making/workflow.svg", "/images/ai-projects/decision-making/output.svg"],
       coverSupportingLabels: ["Structure the decision", "Options & next steps"],
+      coverSupportingDetails: ["Goal, constraints and options", "Pros / cons ready to review"],
       screenshots: [
         "/images/ai-projects/decision-making/01-main.png",
         "/images/ai-projects/decision-making/02-workflow.png",
@@ -284,6 +286,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/energy-optimizer/cover.svg",
       coverSupportingImages: ["/images/ai-projects/energy-optimizer/workflow.svg", "/images/ai-projects/energy-optimizer/output.svg"],
       coverSupportingLabels: ["Forecast & meter inputs", "Top solar windows"],
+      coverSupportingDetails: ["Weather · P1 meter · inverter", "12:00–15:00 · risk low"],
       screenshots: [
         "/images/ai-projects/energy-optimizer/01-main.png",
         "/images/ai-projects/energy-optimizer/02-patterns.png",
@@ -316,6 +319,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/cv-optimizer/cover.svg",
       coverSupportingImages: ["/images/ai-projects/cv-optimizer/workflow.svg", "/images/ai-projects/cv-optimizer/output.svg"],
       coverSupportingLabels: ["CV fit assessment", "Interview & PDF output"],
+      coverSupportingDetails: ["Facts stay grounded in the CV", "Evidence-led questions · PDF ready"],
       screenshots: [
         "/images/ai-projects/cv-optimizer/01-main.png",
         "/images/ai-projects/cv-optimizer/02-validation.png",
@@ -348,6 +352,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/commercial-cv/cover.svg",
       coverSupportingImages: ["/images/ai-projects/commercial-cv/workflow.svg", "/images/ai-projects/commercial-cv/output.svg"],
       coverSupportingLabels: ["Validate CV & role brief", "Grounded PDF delivery"],
+      coverSupportingDetails: ["Secure intake before tailoring", "Validation passed · single-use file"],
       screenshots: [
         "/images/ai-projects/commercial-cv/01-main.png",
         "/images/ai-projects/commercial-cv/02-validation.png",
@@ -379,6 +384,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/dental-trip-savings/cover.svg",
       coverSupportingImages: ["/images/ai-projects/dental-trip-savings/workflow.svg", "/images/ai-projects/dental-trip-savings/output.svg"],
       coverSupportingLabels: ["Trip estimate inputs", "Comparison report"],
+      coverSupportingDetails: ["JFK · single dental implant", "Cheapest · easiest · best overall"],
       screenshots: [
         "/images/ai-projects/dental-trip-savings/01-main.png",
         "/images/ai-projects/dental-trip-savings/02-comparison.png",
@@ -410,6 +416,7 @@ export const portfolio = {
       coverImage: "/images/ai-projects/seo-automation/cover.svg",
       coverSupportingImages: ["/images/ai-projects/seo-automation/workflow.svg", "/images/ai-projects/seo-automation/output.svg"],
       coverSupportingLabels: ["Keyword & SERP evidence", "Topic strategy output"],
+      coverSupportingDetails: ["Seeds · CSV import · SERP research", "Human selected · brief generated"],
       screenshots: [
         "/images/ai-projects/seo-automation/01-main.png",
         "/images/ai-projects/seo-automation/02-research.png",

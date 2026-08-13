@@ -33,27 +33,31 @@ export function ProjectScreenshot({ src, alt, index, className }: { src?: string
   return <img src={src} alt={alt} loading="lazy" className={cn("size-full object-cover object-top", className)} onError={() => setFailed(true)} />;
 }
 
+function WorkflowSnapshot({ src, alt, label, detail }: { src: string; alt: string; label: string; detail: string }) {
+  return (
+    <div className="relative isolate overflow-hidden rounded-xl border border-slate-300 bg-[#eef3fb] p-4 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
+      <div className="absolute inset-0 opacity-25"><ProjectScreenshot src={src} alt={alt} index={1} /></div>
+      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(255,255,255,.96),rgba(245,249,255,.83))]" />
+      <div className="relative flex h-full flex-col justify-between gap-2">
+        <span className="w-fit rounded-full bg-[#dce8ff] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#234887]">Workflow view</span>
+        <div><p className="text-base font-bold leading-tight text-[#132b52] sm:text-lg">{label}</p><p className="mt-1 text-xs font-medium leading-4 text-slate-600 sm:text-sm">{detail}</p></div>
+      </div>
+    </div>
+  );
+}
+
 export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
   const [workflow, output] = project.coverSupportingImages;
   const [workflowLabel, outputLabel] = project.coverSupportingLabels;
+  const [workflowDetail, outputDetail] = project.coverSupportingDetails;
+  const sideHero = ["energy-optimizer", "commercial-cv", "seo-automation"].includes(project.id);
+  const hero = <div className="h-full overflow-hidden rounded-2xl border border-slate-300 bg-white p-2 shadow-[0_16px_30px_rgba(15,23,42,0.12)]"><ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} /></div>;
+  const workflowCard = <WorkflowSnapshot src={workflow} alt={`${project.title} workflow screen`} label={workflowLabel} detail={workflowDetail} />;
+  const outputCard = <WorkflowSnapshot src={output} alt={`${project.title} output screen`} label={outputLabel} detail={outputDetail} />;
   return (
     <div className={`relative min-h-[34rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
       <div className="absolute -right-10 -top-12 size-52 rounded-full bg-white/70 blur-3xl" />
-      <div className="relative grid min-h-[29rem] grid-rows-[minmax(0,1fr)_11rem] gap-4 sm:grid-rows-[minmax(0,1fr)_12rem] sm:gap-5">
-        <div className="overflow-hidden rounded-2xl border border-slate-300 bg-white p-2 shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
-          <ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} />
-        </div>
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={workflow} alt={`${project.title} workflow screen`} index={1} />
-            <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">{workflowLabel}</span>
-          </div>
-          <div className="relative overflow-hidden rounded-xl border border-slate-300 bg-white p-1.5 shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
-            <ProjectScreenshot src={output} alt={`${project.title} output screen`} index={2} />
-            <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded-md bg-[#102b57]/90 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">{outputLabel}</span>
-          </div>
-        </div>
-      </div>
+      {sideHero ? <div className="relative grid min-h-[29rem] grid-cols-[1.15fr_.85fr] grid-rows-2 gap-4 sm:gap-5"><div className="row-span-2">{hero}</div>{workflowCard}{outputCard}</div> : <div className="relative grid min-h-[29rem] grid-rows-[minmax(0,1.25fr)_minmax(0,.75fr)] gap-4 sm:gap-5"><div>{hero}</div><div className="grid grid-cols-2 gap-4 sm:gap-5">{workflowCard}{outputCard}</div></div>}
     </div>
   );
 }
