@@ -3,7 +3,7 @@ import { portfolio } from "@/data/portfolio";
 
 export function Navigation() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-300/90 bg-[#e4eaf2]/92 px-6 backdrop-blur-md sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-[#cbd5e1]/90 bg-[#dfe7f0]/92 px-6 backdrop-blur-md sm:px-8">
       <div className="mx-auto flex h-16 max-w-[1180px] items-center justify-between gap-6">
         <a href="#about" className="shrink-0 text-sm font-semibold tracking-tight text-slate-950">Aleksandar Marković</a>
         <nav aria-label="Main navigation" className="overflow-x-auto">

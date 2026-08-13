@@ -13,7 +13,7 @@ export function EventManagement() {
 
   return (
     <>
-      <Section id="events" className="bg-[#ccd7e4]">
+      <Section id="events" className="bg-[#f8fafc]">
         <SectionHeading eyebrow="Experiences" title="Event Management" description="Community, learning, and delivery experiences brought to life through clear organisation." />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {portfolio.events.map((item) => (

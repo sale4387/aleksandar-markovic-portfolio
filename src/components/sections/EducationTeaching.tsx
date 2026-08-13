@@ -7,7 +7,7 @@ export function EducationTeaching() {
   const teaching = portfolio.education[2];
 
   return (
-    <Section id="education" className="bg-[#d6dfe9]">
+    <Section id="education" className="bg-[#f8fafc]">
       <SectionHeading eyebrow="Learning & sharing" title="Education & Teaching" description="Academic training combined with practical, student-focused teaching." />
       <div className="mt-12 grid gap-5 lg:mt-14 md:grid-cols-2">
         <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.04)]">

@@ -5,7 +5,7 @@ import { Section } from "./Section";
 
 export function Hobbies() {
   return (
-    <Section id="interests" className="bg-[#d1dbe8]">
+    <Section id="interests" className="bg-[#f8fafc]">
       <SectionHeading eyebrow="Outside work" title="Hobbies & Interests" description="The hands-on and under-water pursuits that keep me curious." />
       <div className="mt-14 space-y-12 lg:mt-16 lg:space-y-16">
         {portfolio.hobbies.map((hobby, index) => (

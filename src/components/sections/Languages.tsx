@@ -15,7 +15,7 @@ const languageMeta: Record<string, { flag: string; code: string }> = {
 
 export function Languages() {
   return (
-    <Section id="languages" className="bg-[#ccd7e4]">
+    <Section id="languages" className="bg-[#f8fafc]">
       <SectionHeading eyebrow="Communication" title="Languages" description="Working across languages, cultures, and international teams." />
       <dl className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {portfolio.languages.map((language) => {

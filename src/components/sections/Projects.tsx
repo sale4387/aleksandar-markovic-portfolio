@@ -47,7 +47,7 @@ export function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   return (
     <>
-      <Section id="projects" className="bg-[radial-gradient(circle_at_94%_5%,rgba(163,181,207,0.78),transparent_24%),#d1dbe8]">
+      <Section id="projects" className="bg-[radial-gradient(circle_at_94%_5%,rgba(203,216,235,0.7),transparent_24%),#f8fafc]">
         <SectionHeading eyebrow="Selected work" title="AI & Tech Projects" description="Product-minded AI tools designed around clear decisions, useful workflows, and practical outcomes." />
         <div className="mt-10 space-y-7 lg:mt-12 lg:space-y-8">
           {portfolio.projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} onOpen={setActiveProject} />)}

@@ -10,5 +10,5 @@ import { Languages } from "@/components/sections/Languages";
 import { Projects } from "@/components/sections/Projects";
 
 export default function Home() {
-  return <><Navigation /><main className="mx-auto max-w-[1180px] space-y-3 px-3 py-3 sm:px-4"><Hero /><CoreSkills /><Experience /><Projects /><EducationTeaching /><EventManagement /><Hobbies /><Languages /></main><ContactFooter /></>;
+  return <><Navigation /><main className="mx-auto max-w-[1180px] space-y-3 px-3 py-3 sm:px-4"><Hero /><CoreSkills /><Experience /><Projects /><EducationTeaching /><EventManagement /><Languages /><Hobbies /></main><ContactFooter /></>;
 }
