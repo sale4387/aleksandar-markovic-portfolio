@@ -38,7 +38,7 @@ export function ProjectPreview({ project, accentClass }: ProjectPreviewProps) {
     <div className={`relative min-h-[31rem] overflow-hidden bg-gradient-to-br p-5 sm:p-7 ${accentClass}`}>
       <div className="absolute -right-10 -top-12 size-52 rounded-full bg-white/70 blur-3xl" />
       <div className="absolute inset-5 overflow-hidden rounded-2xl border border-slate-300 bg-white p-2 shadow-[0_18px_34px_rgba(15,23,42,0.14)] sm:inset-7">
-        <ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} className="object-cover object-center" />
+        <ProjectScreenshot src={project.coverImage} alt={`${project.title} product cover`} index={0} className="object-contain object-center" />
       </div>
     </div>
   );
