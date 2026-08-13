@@ -23,7 +23,7 @@ const accentStyles = {
 function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: (project: Project) => void }) {
   const isReversed = index % 2 === 1;
   return (
-    <Card className={`group grid overflow-hidden rounded-3xl shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition-shadow hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)] lg:grid-cols-[1.25fr_0.75fr] ${isReversed ? "lg:[&>*:first-child]:order-2" : ""}`}>
+    <Card className={`group grid overflow-hidden rounded-3xl shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition-shadow hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)] ${isReversed ? "lg:grid-cols-[0.75fr_1.25fr] lg:[&>*:first-child]:order-2" : "lg:grid-cols-[1.25fr_0.75fr]"}`}>
       <ProjectPreview project={project} accentClass={accentStyles[project.accent]} />
       <CardContent className="flex min-h-[25rem] flex-col p-7 sm:p-9 lg:p-10">
         <div className="flex items-center justify-between gap-4">
