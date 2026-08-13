@@ -23,6 +23,8 @@ export type Education = {
 export type Event = {
   id: string;
   title: string;
+  logo?: string;
+  logoFit?: "contain" | "cover";
   year: string;
   location: string;
   role: string;
@@ -177,6 +179,8 @@ export const portfolio = {
     {
       id: "international-youth-day-2010",
       title: "International Youth Day",
+      logo: "/images/events/international-youth-day-2010/logo.jpg",
+      logoFit: "cover",
       year: "2010",
       location: "Belgrade",
       role: "Contributor / youth event support",
@@ -205,29 +209,31 @@ export const portfolio = {
     {
       id: "belgrade-get-together-2015",
       title: "The Belgrade Get Together",
+      logo: "/images/events/belgrade-get-together-2015/logo.png",
       year: "2015",
       location: "Belgrade",
       role: "Lead organizer",
       category: "Independent Event",
-      shortDescription: "Led the organization and delivery of a networking-style event in Belgrade.",
-      context: "A self-led event project focused on bringing people together through planning, logistics, communication and execution.",
-      contribution: ["Led planning and coordination", "Handled practical logistics", "Coordinated people and event flow", "Owned execution from preparation to delivery"],
-      outcome: "A hands-on event leadership experience showing end-to-end ownership and delivery.",
-      demonstrates: ["Event ownership", "Logistics", "Stakeholder coordination", "Execution under pressure"],
+      shortDescription: "Created and led a mobile-industry networking event connecting Eastern and Western European companies.",
+      context: "The Belgrade Get Together brought mobile-industry professionals to Crowne Plaza Belgrade for business talks, networking and social programming from 26–28 October 2015.",
+      contribution: ["Led the event concept, planning and stakeholder coordination", "Managed venue, guest-flow and practical event logistics", "Built the public event presence, registration and participant communication workflows", "Created networking and social-programming touchpoints, including the train party"],
+      outcome: "A complete event-delivery project that combined commercial community-building, logistics and attendee experience.",
+      demonstrates: ["Event ownership", "Community building", "Stakeholder coordination", "Attendee experience"],
       images: [],
     },
     {
       id: "liftit-2016",
       title: "Liftit",
+      logo: "/images/events/liftit-2016/logo.png",
       year: "2016",
       location: "Belgrade",
       role: "Lead organizer",
       category: "Independent Event",
-      shortDescription: "Led the organization and practical delivery of Liftit 2016.",
-      context: "A self-led event project requiring planning, coordination, logistics and execution.",
-      contribution: ["Owned event preparation", "Managed logistics and coordination", "Handled practical execution details", "Drove the event from concept to delivery"],
-      outcome: "A lead-organizer experience demonstrating planning, responsibility and hands-on delivery.",
-      demonstrates: ["Leadership", "Planning", "Execution", "Event operations"],
+      shortDescription: "Created and led a mobile-technology conference with panels, startup pitches and industry networking.",
+      context: "Liftit was a Belgrade mobile-industry conference focused on mobile technologies and entrepreneurship. Its programme brought together industry professionals, aspiring founders, researchers and enthusiasts.",
+      contribution: ["Owned the event from concept and programme through on-the-day delivery", "Coordinated speakers, sponsors, partners and operational details", "Designed the startup pitch competition to give early-stage teams access to industry leaders", "Ran the event website, registration, participant administration and email communications"],
+      outcome: "A documented conference-delivery project with a clear community mission, commercial partners and a dedicated startup platform.",
+      demonstrates: ["Conference production", "Programme design", "Partnerships", "Event operations"],
       images: [],
     },
   ] satisfies Event[],
@@ -446,6 +452,7 @@ export const portfolio = {
         "/images/hobbies/diving/diving-01.jpg",
         "/images/hobbies/diving/diving-02.jpg",
         "/images/hobbies/diving/diving-03.jpg",
+        "/images/hobbies/diving/diving-04.jpg",
       ],
     },
     {
@@ -453,9 +460,12 @@ export const portfolio = {
       label: "Making by hand",
       description: "A practical counterbalance to screen work — planning, building, and refining tangible things.",
       images: [
-        "/images/hobbies/woodworking/woodworking-01.jpg",
-        "/images/hobbies/woodworking/woodworking-02.jpg",
-        "/images/hobbies/woodworking/woodworking-03.jpg",
+        "/images/hobbies/woodworking/woodworking-01-workspace.jpeg",
+        "/images/hobbies/woodworking/woodworking-02-platform.jpeg",
+        "/images/hobbies/woodworking/woodworking-03-stairs-retouched.png",
+        "/images/hobbies/woodworking/woodworking-04-workshop.jpeg",
+        "/images/hobbies/woodworking/woodworking-05-table-build.jpeg",
+        "/images/hobbies/woodworking/woodworking-06-child-desk.jpeg",
       ],
     },
   ] satisfies Hobby[],

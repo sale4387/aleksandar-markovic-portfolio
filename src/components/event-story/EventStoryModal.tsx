@@ -25,8 +25,8 @@ function EventImageGallery({ images, title }: { images: string[]; title: string 
         <Image
           key={image}
           src={image}
-          alt={`${title} event documentation`}
-          className="aspect-[4/3] w-full rounded-2xl border border-slate-200 bg-slate-100 object-cover"
+          alt={`${title} project logo`}
+          className="aspect-video w-full rounded-2xl border border-slate-200 bg-slate-100 object-contain"
           width={800}
           height={600}
           onError={() => setVisibleImages((current) => current.filter((item) => item !== image))}
