@@ -80,7 +80,7 @@ export type Hobby = {
 
 export const portfolio = {
   person: {
-    name: "Aleksandar Marković",
+    name: "Aleksandar (Sale) Marković",
     location: "Gouda, Netherlands",
     summary:
       "Commercial and product-oriented professional with 13+ years across CPaaS, messaging, mobile payments, connectivity, strategic partnerships, and AI product development.",
@@ -469,5 +469,5 @@ export const portfolio = {
       ],
     },
   ] satisfies Hobby[],
-  footer: "© 2026 Aleksandar Marković.",
+  footer: "© 2026 Aleksandar (Sale) Marković.",
 };

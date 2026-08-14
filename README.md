@@ -1,4 +1,4 @@
-# Aleksandar Marković Portfolio
+# Aleksandar (Sale) Marković Portfolio
 
 Single-page Next.js portfolio with editable content in `src/data/portfolio.ts`.
 
