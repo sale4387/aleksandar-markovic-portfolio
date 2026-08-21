@@ -242,7 +242,7 @@ export const portfolio = {
     { name: "English", level: "Advanced / Professional" },
     { name: "Dutch", level: "Ongoing B1" },
     { name: "Spanish", level: "A2" },
-    { name: "German", level: "Basic" },
+    { name: "German", level: "A1" },
   ],
   // Edit project text and screenshot paths here. Add assets in the matching
   // public/images/ai-projects/<project>/ folder, then run `npm run build`.
@@ -453,19 +453,6 @@ export const portfolio = {
         "/images/hobbies/diving/diving-02.jpg",
         "/images/hobbies/diving/diving-03.jpg",
         "/images/hobbies/diving/diving-04.jpg",
-      ],
-    },
-    {
-      title: "DIY & Woodworking",
-      label: "Making by hand",
-      description: "A practical counterbalance to screen work: planning, building, and refining tangible things.",
-      images: [
-        "/images/hobbies/woodworking/woodworking-01-workspace.jpeg",
-        "/images/hobbies/woodworking/woodworking-02-platform.jpeg",
-        "/images/hobbies/woodworking/woodworking-03-stairs-retouched.png",
-        "/images/hobbies/woodworking/woodworking-04-workshop.jpeg",
-        "/images/hobbies/woodworking/woodworking-05-table-build.jpeg",
-        "/images/hobbies/woodworking/woodworking-06-child-desk.jpeg",
       ],
     },
   ] satisfies Hobby[],
