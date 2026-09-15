@@ -79,10 +79,38 @@ function DecisionPanel({ step, final }: Omit<StoryPanelProps, "type">) {
 
 function EnergyPanel({ step, final }: Omit<StoryPanelProps, "type">) {
   if (step.loadingText) return <ProcessingPanel step={step} tone="emerald" />;
-  if (step.input) return <Panel className="border-emerald-200"><PanelTitle label={step.label} icon={CloudSun} /><div className="mt-5 flex items-center gap-4"><span className="flex size-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600"><SunMedium className="size-7" /></span><p className="text-lg font-semibold leading-7 text-slate-900">{step.input}</p></div><div className="mt-5 grid grid-cols-3 gap-2">{["06:00", "12:00", "18:00"].map((time, index) => <div key={time} className="rounded-xl bg-emerald-50 p-2 text-center"><p className="text-[10px] font-semibold text-emerald-700">{time}</p><div className={cn("mx-auto mt-2 h-1.5 rounded-full bg-emerald-500", index === 1 ? "w-full" : "w-1/2 opacity-50")} /></div>)}</div></Panel>;
-  if (step.meta && step.output) return <PhoneNotification step={step} final={final} />;
-  if (step.meta) return <div><PanelTitle label={step.label} icon={Gauge} /><div className="mt-4 grid gap-3 sm:grid-cols-3">{step.meta.map((item, index) => <Panel key={item} className="p-3.5"><span className={cn("flex size-8 items-center justify-center rounded-xl", index === 0 ? "bg-sky-100 text-sky-700" : "bg-emerald-100 text-emerald-700")}><Gauge className="size-4" /></span><p className="mt-4 text-sm font-semibold leading-5 text-slate-800">{item}</p><div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className={cn("h-full rounded-full bg-emerald-500", index === 1 ? "w-3/4" : index === 2 ? "w-2/3" : "w-1/2")} /></div></Panel>)}</div></div>;
+
+  if (step.input) {
+    return <TelegramPhoneFrame><div className="rounded-xl bg-[#304053] p-3 text-center text-sm font-bold text-white">🤖 Ask AI</div><div className="ml-auto mt-4 max-w-[85%] rounded-2xl rounded-br-sm bg-violet-600 px-4 py-3 text-sm font-semibold leading-5 text-white shadow-sm">{step.input}</div><div className="mt-4 flex items-center gap-2 text-xs font-medium text-slate-300"><span className="size-2 animate-pulse rounded-full bg-emerald-400" /> Waiting for forecast and live context</div></TelegramPhoneFrame>;
+  }
+
+  if (step.label.toLowerCase().includes("live") && step.meta) {
+    return <TelegramPhoneFrame><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">⚡ LIVE ENERGY SNAPSHOT</p><div className="mt-2 h-px bg-white/70" /><div className="mt-3 space-y-1 text-sm font-semibold">{step.meta.map((item) => <p key={item}>{item}</p>)}</div></div></TelegramPhoneFrame>;
+  }
+
+  if (step.label.toLowerCase().includes("weather") && step.meta) {
+    return <Panel className="border-emerald-200"><PanelTitle label={step.label} icon={CloudSun} /><div className="mt-5 grid gap-3 sm:grid-cols-3">{step.meta.map((item, index) => <div key={item} className="rounded-xl bg-emerald-50 p-3"><span className="text-xs font-bold text-emerald-700">0{index + 1}</span><p className="mt-3 text-sm font-semibold leading-5 text-slate-800">{item}</p></div>)}</div></Panel>;
+  }
+
+  if (step.label.toLowerCase().includes("ai answer") && step.output) {
+    return <TelegramPhoneFrame><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">🤖 ENERGY ASSISTANT</p><div className="mt-2 h-px bg-white/70" /><p className="mt-4 text-sm font-medium leading-6">{step.output}</p></div></TelegramPhoneFrame>;
+  }
+
+  if (step.meta && step.output) return <TelegramMenuPanel step={step} final={final} />;
+
+  if (step.meta) {
+    return <div><PanelTitle label={step.label} icon={Gauge} /><div className="mt-4 grid gap-3 sm:grid-cols-3">{step.meta.map((item, index) => <Panel key={item} className="p-3.5"><span className={cn("flex size-8 items-center justify-center rounded-xl", index === 0 ? "bg-sky-100 text-sky-700" : "bg-emerald-100 text-emerald-700")}><Gauge className="size-4" /></span><p className="mt-4 text-sm font-semibold leading-5 text-slate-800">{item}</p><div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className={cn("h-full rounded-full bg-emerald-500", index === 1 ? "w-3/4" : index === 2 ? "w-2/3" : "w-1/2")} /></div></Panel>)}</div></div>;
+  }
+
   return <OutputCard step={step} final={final} icon={SunMedium} />;
+}
+
+function TelegramPhoneFrame({ children }: { children: ReactNode }) {
+  return <div className="mx-auto max-w-sm rounded-[2rem] border-[6px] border-slate-900 bg-slate-950 p-2 shadow-[0_18px_34px_rgba(15,23,42,0.22)]"><div className="rounded-[1.45rem] bg-[#172536] p-3"><div className="mx-auto h-1.5 w-16 rounded-full bg-slate-700" /><div className="mt-4 flex items-center gap-2 rounded-2xl bg-[#243448] px-3 py-2"><span className="flex size-8 items-center justify-center rounded-full bg-sky-400 text-white">⚡</span><div><p className="text-xs font-bold text-white">Energy Optimizer Bot</p><p className="text-[10px] text-slate-300">bot</p></div></div><div className="mt-4 space-y-3">{children}</div></div></div>;
+}
+
+function TelegramMenuPanel({ step, final }: { step: ProductStoryStep; final: boolean }) {
+  return <TelegramPhoneFrame><div className="grid grid-cols-2 gap-2">{step.meta?.slice(0, 4).map((item) => <div key={item} className="rounded-xl bg-[#304053] px-3 py-3 text-center text-xs font-bold text-white">{item}</div>)}</div><div className="rounded-xl bg-[#304053] px-3 py-3 text-center text-xs font-bold text-white">Help</div><div className="rounded-xl bg-[#304053] px-3 py-3 text-center text-xs font-bold text-white">Invite member</div><div className="rounded-2xl bg-[#26374a] p-3 text-sm font-medium leading-5 text-white">{step.output}</div>{final && step.finalNote && <p className="text-center text-[10px] font-medium text-slate-400">{step.finalNote}</p>}</TelegramPhoneFrame>;
 }
 
 function PhoneNotification({ step, final }: { step: ProductStoryStep; final: boolean }) {
