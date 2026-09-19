@@ -57,6 +57,7 @@ export type Project = {
   title: string;
   status: "Live project" | "Local demo" | "Work in progress";
   role: string;
+  architecture?: string;
   shortDescription: string;
   problem: string;
   workflow: string[];
@@ -284,6 +285,7 @@ export const portfolio = {
       title: "Energy Usage Optimizer",
       status: "Live project",
       role: "Coded by me / AI-assisted builder",
+      architecture: "Native agentic · tool calling",
       shortDescription: "A Telegram-first home energy assistant that combines live household energy readings, solar forecast windows and AI explanations to suggest when to use appliances.",
       problem: "Raw household energy data and solar forecasts are hard to act on without a simple interface that answers practical questions in the moment.",
       workflow: ["Telegram question", "Live energy snapshot", "Weather forecast", "Solar window calculation", "AI explanation", "Notification and household access"],
@@ -316,6 +318,7 @@ export const portfolio = {
       title: "CV Optimizer / Interview Prep",
       status: "Live project",
       role: "Product owner / workflow designer / task reviewer",
+      architecture: "Bounded agentic · structured intent",
       shortDescription: "A structured AI workflow for tailoring a CV to a job description and generating interview preparation materials.",
       problem: "Manual CV tailoring is slow, inconsistent and risky when AI is allowed to invent experience.",
       workflow: ["Upload or provide CV content", "Validate extracted candidate facts", "Compare against job description", "Generate tailored CV output", "Generate interview preparation questions"],
@@ -381,6 +384,7 @@ export const portfolio = {
       title: "Dental Trip Savings",
       status: "Local demo",
       role: "Product owner / system designer / Codex-led implementation",
+      architecture: "Bounded planner–executor loop",
       shortDescription: "A calculator-style product for estimating potential dental treatment savings across destination options.",
       problem: "People considering dental travel need a simple way to compare estimated treatment, travel and accommodation costs before going deeper.",
       workflow: ["Select departure location", "Select treatment type", "Compare destination options", "Estimate travel and treatment costs", "Generate a short savings report"],
