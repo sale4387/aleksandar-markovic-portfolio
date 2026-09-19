@@ -71,10 +71,37 @@ function ProcessingPanel({ step, tone = "blue" }: { step: ProductStoryStep; tone
 }
 
 function DecisionPanel({ step, final }: Omit<StoryPanelProps, "type">) {
-  if (step.loadingText) return <ProcessingPanel step={step} />;
-  if (step.input) return <Panel><PanelTitle label={step.label} icon={Sparkles} /><p className="mt-5 text-lg font-semibold tracking-[-0.025em] text-slate-900 sm:text-xl">{step.input}</p><div className="mt-5 flex justify-end"><span className="rounded-lg bg-[#183663] px-3 py-2 text-xs font-semibold text-white">Analyze</span></div></Panel>;
-  if (step.meta) return <div><PanelTitle label={step.label} icon={Sparkles} /><div className="mt-4 grid grid-cols-2 gap-3">{step.meta.map((item, index) => <Panel key={item} className="p-3.5"><span className="text-xs font-bold text-[#35568d]">0{index + 1}</span><p className="mt-4 text-sm font-semibold leading-5 text-slate-800">{item}</p></Panel>)}</div></div>;
-  return <OutputCard step={step} final={final} />;
+  const label = step.label.toLowerCase();
+
+  if (step.loadingText) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><div className="flex items-center gap-2"><LoaderCircle className="size-4 animate-spin text-violet-300" /><p className="text-sm font-bold">{step.loadingText}</p></div>{step.loadingDetail && <p className="mt-2 text-xs leading-5 text-slate-300">{step.loadingDetail}</p>}</div></TelegramPhoneFrame>;
+  }
+
+  if (step.input) {
+    return <TelegramPhoneFrame variant="decision"><div className="ml-auto max-w-[88%] rounded-2xl rounded-br-sm bg-violet-600 px-4 py-3 text-sm font-semibold leading-5 text-white shadow-sm">{step.input}</div><div className="flex items-center gap-2 px-1 text-xs font-medium text-slate-300"><span className="size-2 animate-pulse rounded-full bg-violet-400" /> Structuring the decision...</div></TelegramPhoneFrame>;
+  }
+
+  if (label === "goal" && step.output) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">🎯 Goal</p><p className="mt-3 text-sm font-medium leading-6">{step.output}</p></div></TelegramPhoneFrame>;
+  }
+
+  if (label === "constraints" && step.meta) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">⚠️ Constraints</p><div className="mt-3 space-y-1.5">{step.meta.map((item) => <p key={item} className="text-sm font-medium leading-5">• {item}</p>)}</div></div></TelegramPhoneFrame>;
+  }
+
+  if (label === "options" && step.meta) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">🧩 Options</p><div className="mt-3 space-y-2">{step.meta.map((item) => <div key={item} className="rounded-xl bg-[#304053] px-3 py-2.5 text-sm font-semibold">▶ {item}</div>)}</div></div></TelegramPhoneFrame>;
+  }
+
+  if (label.includes("pros") && step.output) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">✅ Pros / ❌ Cons</p><p className="mt-3 text-sm font-medium leading-6">{step.output}</p></div></TelegramPhoneFrame>;
+  }
+
+  if (step.output) {
+    return <TelegramPhoneFrame variant="decision"><div className="rounded-2xl bg-[#26374a] p-4 text-white"><p className="text-base font-bold">➡️ Next steps</p><p className="mt-3 text-sm font-medium leading-6">{step.output}</p><div className="mt-4 rounded-xl bg-[#304053] px-3 py-2 text-xs font-semibold text-violet-100">🧠 AI assessment · structured recommendation ready</div>{final && step.finalNote && <p className="mt-3 text-center text-[10px] font-medium text-slate-400">{step.finalNote}</p>}</div></TelegramPhoneFrame>;
+  }
+
+  return null;
 }
 
 function EnergyPanel({ step, final }: Omit<StoryPanelProps, "type">) {
@@ -105,8 +132,9 @@ function EnergyPanel({ step, final }: Omit<StoryPanelProps, "type">) {
   return <OutputCard step={step} final={final} icon={SunMedium} />;
 }
 
-function TelegramPhoneFrame({ children }: { children: ReactNode }) {
-  return <div className="mx-auto max-w-sm rounded-[2rem] border-[6px] border-slate-900 bg-slate-950 p-2 shadow-[0_18px_34px_rgba(15,23,42,0.22)]"><div className="rounded-[1.45rem] bg-[#172536] p-3"><div className="mx-auto h-1.5 w-16 rounded-full bg-slate-700" /><div className="mt-4 flex items-center gap-2 rounded-2xl bg-[#243448] px-3 py-2"><span className="flex size-8 items-center justify-center rounded-full bg-sky-400 text-white">⚡</span><div><p className="text-xs font-bold text-white">Energy Optimizer Bot</p><p className="text-[10px] text-slate-300">bot</p></div></div><div className="mt-4 space-y-3">{children}</div></div></div>;
+function TelegramPhoneFrame({ children, variant = "energy" }: { children: ReactNode; variant?: "energy" | "decision" }) {
+  const isDecision = variant === "decision";
+  return <div className="mx-auto max-w-sm rounded-[2rem] border-[6px] border-slate-900 bg-slate-950 p-2 shadow-[0_18px_34px_rgba(15,23,42,0.22)]"><div className="rounded-[1.45rem] bg-[#172536] p-3"><div className="mx-auto h-1.5 w-16 rounded-full bg-slate-700" /><div className={cn("mt-4 flex items-center gap-2 rounded-2xl px-3 py-2", isDecision ? "bg-gradient-to-r from-[#4f2a63] to-[#704184]" : "bg-[#243448]")}><span className={cn("flex size-8 items-center justify-center rounded-full font-black text-white", isDecision ? "bg-gradient-to-br from-cyan-400 to-violet-500" : "bg-sky-400")}>{isDecision ? "✓" : "⚡"}</span><div><p className="text-xs font-bold text-white">{isDecision ? "Help Me Choose" : "Energy Optimizer Bot"}</p><p className="text-[10px] text-slate-300">bot</p></div></div><div className="mt-4 space-y-3">{children}</div></div></div>;
 }
 
 function TelegramMenuPanel({ step, final }: { step: ProductStoryStep; final: boolean }) {
