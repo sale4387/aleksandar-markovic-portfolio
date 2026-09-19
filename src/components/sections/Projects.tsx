@@ -32,6 +32,7 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
         </div>
         <h3 className="mt-7 max-w-md text-2xl font-semibold tracking-[-0.035em] text-slate-950 sm:text-3xl">{project.title}</h3>
         <p className="mt-3 text-sm font-medium leading-6 text-[#243b6b]">{project.role}</p>
+        {project.architecture && <div className="mt-3"><Badge variant="blue">AI architecture · {project.architecture}</Badge></div>}
         <p className="mt-5 max-w-md text-base leading-7 text-slate-600">{project.shortDescription}</p>
         <div className="mt-6 border-l-2 border-[#b8c6dd] pl-4"><p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#243b6b]">Product outcome</p><p className="mt-2 text-sm leading-6 text-slate-600">{project.outcome}</p></div>
         <div className="mt-auto flex flex-wrap gap-2 pt-7">
